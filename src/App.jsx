@@ -1,18 +1,25 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './components/Home/Home';
 
 function App() {
+  const [activePage, setActivePage] = useState('accueil');
+  const [isDark, setIsDark] = useState(false);
+
   return (
-    <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold mb-4 text-indigo-400">
-        Mon Portfolio est en ligne ! 
-      </h1>
-      <p className="text-slate-400">
-        React + Tailwind CSS configuré avec succès.
-      </p>
+    <div className={`min-h-screen flex flex-col bg-[#FCF6F7] text-gray-800 ${isDark ? 'dark bg-gray-900 text-white' : ''}`}>
+      <Header 
+        activePage={activePage} 
+        setActivePage={setActivePage} 
+        isDark={isDark} 
+        setIsDark={setIsDark} 
+      />
+
+      {/* Affichage de la page sélectionnée */}
+      {activePage === 'accueil' && <Home setActivePage={setActivePage} />}
+
+      <Footer />
     </div>
   )
 }
