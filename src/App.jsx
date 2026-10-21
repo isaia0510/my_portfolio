@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import ProjectsPage from './pages/Projet/ProjectsPage';
+import ProfilPage from './pages/Profil/ProfilPage';
 
 function App() {
   const [activePage, setActivePage] = useState('accueil');
@@ -17,6 +18,7 @@ function App() {
       {/* Affichage de la page sélectionnée */}
       {activePage === 'accueil' && <Home setActivePage={setActivePage} />}
       {activePage === 'projets' && <ProjectsPage />}
+      {activePage === 'profil' && <ProfilPage />}
 
       <Footer />
     </div>
