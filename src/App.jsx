@@ -2,22 +2,21 @@ import { useState } from 'react'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home/Home';
+import ProjectsPage from './pages/Projet/ProjectsPage';
 
 function App() {
   const [activePage, setActivePage] = useState('accueil');
-  const [isDark, setIsDark] = useState(false);
 
   return (
-    <div className={`min-h-screen flex flex-col bg-[#FCF6F7] text-gray-800 ${isDark ? 'dark bg-gray-900 text-white' : ''}`}>
+    <div className={`min-h-screen flex flex-col bg-[#FCF6F7] text-gray-800`}>
       <Header 
         activePage={activePage} 
         setActivePage={setActivePage} 
-        isDark={isDark} 
-        setIsDark={setIsDark} 
       />
 
       {/* Affichage de la page sélectionnée */}
       {activePage === 'accueil' && <Home setActivePage={setActivePage} />}
+      {activePage === 'projets' && <ProjectsPage />}
 
       <Footer />
     </div>
