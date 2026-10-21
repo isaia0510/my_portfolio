@@ -1,12 +1,12 @@
 import { Languages } from "lucide-react";
 import logo from '../assets/portfolio_logo.png';
 
-export default function Header({ activePage, setActivePage, isEnglish, setIsEnglish }) {
+export default function Header({ activePage, setActivePage, isEnglish, setIsEnglish, t }) {
     const navItems = [
-        { id: 'accueil', label: 'ACCUEIL' },
-        { id: 'projets', label: 'PROJETS' },
-        { id: 'profil', label: 'PROFIL' },
-        { id: 'contact', label: 'CONTACT' }
+        { id: 'accueil', label: t.accueil },
+        { id: 'projets', label: t.projets },
+        { id: 'profil', label: t.profil },
+        { id: 'contact', label: t.contact }
     ];
 
     return (
@@ -39,7 +39,7 @@ export default function Header({ activePage, setActivePage, isEnglish, setIsEngl
                     onClick={() => setActivePage('contact')}
                     className="bg-pink-button-color text-text-button-color font-medium px-5 py-2 rounded-full text-xs tracking-wider uppercase shadow-sm transition-all hover:bg-rose-50 hover:border hover:border-pink-secondary-text-color hover:text-pink-secondary-text-color cursor-pointer"
                 >
-                    me recruter
+                    {t.recruter}
                 </button>
 
                 <button

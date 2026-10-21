@@ -1,25 +1,23 @@
 import AvatarIllustration from "../../assets/accueil.png";
 import { useTypewriter } from "../../animation/useTypewriter";
 
-export default function Home({setActivePage}) {
-    const text = useTypewriter("Curieuse et toujours prête à apprendre !");
+export default function Home({setActivePage, t}) {
+    const text = useTypewriter(t.bubble);
 
     return(
         <section className="flex-1 max-w-6xl w-full mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-12">
              { /* Texte de présentation */}
             <div className="flex-1 space-y-6 text-center md:text-left">
                 <h2 className="text-3xl font-smile text-primary-text-color">
-                    <span className="text-brand-rose">Hello</span>, je suis <span className="font-smile text-pink-smile-text-color text-4xl">Isaia Joëlle</span>
+                    <span className="text-brand-rose">{t.hello}</span>, <span className="font-smile text-pink-smile-text-color text-4xl">Isaia Joëlle</span>
                 </h2>
                 
                 <h1 className="text-2xl md:text-3xl font-bold tracking-wide text-primary-text-color uppercase">
-                    Développeuse Web Junior
+                    {t.job}
                 </h1>
 
                 <p className="text-text-long text-sm md:text-base leading-relaxed max-w-lg">
-                    Passionnée par la création de solutions numériques par l’innovation, 
-                    je suis toujours prête et motivée à relever de nouveaux défis et à 
-                    contribuer à des projets innovants tout en développant mes compétences.
+                    {t.bio}
                 </p>
 
                 {/* Boutons d'action */}
@@ -28,7 +26,7 @@ export default function Home({setActivePage}) {
                         onClick={() => setActivePage('projets')}
                         className="bg-pink-button-color text-white font-medium px-6 py-2.5 rounded-full text-sm shadow-md transition-all hover:border hover:border-pink-secondary-text-color hover:bg-white hover:text-pink-secondary-text-color cursor-pink-button-color"
                     >
-                        Mon travail
+                        {t.myWork}
                     </button>
                 
                     <a 
@@ -36,7 +34,7 @@ export default function Home({setActivePage}) {
                         download
                         className="border border-pink-button-color text-primary-text-color hover:bg-rose-100 hover:border-pink-secondary-text-color font-medium px-6 py-2.5 rounded-full text-sm transition-all"
                     >
-                        Télécharger mon CV
+                        {t.downloadCV}
                     </a>
                 </div>
             </div>
