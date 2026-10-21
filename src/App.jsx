@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import ProjectsPage from './pages/Projet/ProjectsPage';
 import ProfilPage from './pages/Profil/ProfilPage';
+import ContactPage from './pages/Contact/ContactPage';
 
 function App() {
   const [activePage, setActivePage] = useState('accueil');
@@ -19,6 +20,7 @@ function App() {
       {activePage === 'accueil' && <Home setActivePage={setActivePage} />}
       {activePage === 'projets' && <ProjectsPage />}
       {activePage === 'profil' && <ProfilPage />}
+      {activePage === 'contact' && <ContactPage />}
 
       <Footer />
     </div>
