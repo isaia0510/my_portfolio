@@ -1,6 +1,7 @@
 import TechBadge from './TechBadge';
 
-export default function SkillCategoryCard({ title, iconPath, items }) {
+export default function SkillCategoryCard({ title, iconPath, items, isEnglish }) {
+  const lang = isEnglish ? "EN" : "FR";
   return (
     <div className="border border-pink-smile-text-color rounded-3xl p-6 bg-white shadow-sm flex flex-col justify-between">
       <div>
@@ -14,7 +15,7 @@ export default function SkillCategoryCard({ title, iconPath, items }) {
 
       <div className="flex flex-wrap gap-2">
         {items.map((item, index) => (
-          <TechBadge key={index} name={item} />
+          <TechBadge key={index} name={typeof item === "string" ? item : item[lang]} />
         ))}
       </div>
     </div>

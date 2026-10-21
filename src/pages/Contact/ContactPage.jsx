@@ -4,7 +4,7 @@ import GitHubIcon from '../../assets/github.png';
 import WhatsappIcon from '../../assets/whatsapp.png';
 import LinkedInIcon from '../../assets/linkedin.png';
 
-export default function ContactPage() {
+export default function ContactPage({t}) {
     const [formData, setFormData] = useState({
         nom: '',
         email: '',
@@ -35,11 +35,10 @@ export default function ContactPage() {
         <div className="flex-1 space-y-6 w-full">
             <div>
             <h2 className="font-smile text-4xl text-pink-smile-text-color mb-2">
-                Contactez-moi !
+                {t.title}
             </h2>
             <p className="text-primary-text-color text-sm">
-                Vous avez un projet ou une opportunité à partager? 
-                <br/> N'hésitez pas à me contacter!
+                {t.subtitle}
             </p>
             </div>
 
@@ -51,7 +50,7 @@ export default function ContactPage() {
                     <Mail size={25} className="text-pink-smile-text-color" />
                 </div>
                 <div>
-                <p className="text-xs font-semibold text-pink-secondary-text-color">Adresse mail</p>
+                <p className="text-xs font-semibold text-pink-secondary-text-color">{t.email}</p>
                 <p className="text-xs text-gray-700 font-medium">isaiajoellenirina@gmail.com</p>
                 </div>
             </div>
@@ -62,7 +61,7 @@ export default function ContactPage() {
                     <Phone size={25} className="text-pink-smile-text-color" />
                 </div>
                 <div>
-                <p className="text-xs font-semibold text-pink-secondary-text-color">Téléphone</p>
+                <p className="text-xs font-semibold text-pink-secondary-text-color">{t.phone}</p>
                 <p className="text-xs text-gray-700 font-medium">+261 38 45 691 73</p>
                 </div>
             </div>
@@ -73,7 +72,7 @@ export default function ContactPage() {
                     <MapPin size={25} className="text-pink-smile-text-color" />
                 </div>
                 <div>
-                <p className="text-xs font-semibold text-pink-secondary-text-color">Adresse</p>
+                <p className="text-xs font-semibold text-pink-secondary-text-color">{t.location}</p>
                 <p className="text-xs text-gray-700 font-medium">Antananarivo, Madagascar</p>
                 </div>
             </div>
@@ -85,7 +84,7 @@ export default function ContactPage() {
                 download
                 className="inline-block bg-pink-button-color text-white font-medium px-6 py-2.5 rounded-full text-sm shadow-md transition-all hover:border hover:border-pink-secondary-text-color hover:bg-white hover:text-pink-secondary-text-color cursor-pink-button-color"
             >
-                Télécharger mon CV
+                {t.downloadCV}
             </a>
             </div>
 
@@ -109,20 +108,20 @@ export default function ContactPage() {
             {submitted ? (
                 <div className="text-center py-8 space-y-3">
                 <span className="text-4xl">✨</span>
-                <p className="text-brand-rose font-bold text-lg">Merci pour votre message !</p>
-                <p className="text-xs text-gray-600">Je vous répondrai dans les plus brefs délais.</p>
+                <p className="text-brand-rose font-bold text-lg">{t.form.successMsg}</p>
+                <p className="text-xs text-gray-600">{t.form.successSub}</p>
                 <button 
                     onClick={() => setSubmitted(false)}
                     className="mt-4 text-xs text-brand-rose underline font-semibold"
                 >
-                    Envoyer un autre message
+                    {t.form.sendAnother}
                 </button>
                 </div>
             ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Champ Nom */}
                 <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Nom</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">{t.form.name}</label>
                     <input
                     type="text"
                     name="nom"
@@ -136,7 +135,7 @@ export default function ContactPage() {
 
                 {/* Champ Email */}
                 <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Adresse mail</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">{t.form.email}</label>
                     <input
                     type="email"
                     name="email"
@@ -150,7 +149,7 @@ export default function ContactPage() {
 
                 {/* Champ Message */}
                 <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Votre message</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">{t.form.message}</label>
                     <textarea
                     name="message"
                     required
@@ -168,7 +167,7 @@ export default function ContactPage() {
                     type="submit"
                     className="bg-pink-button-color text-white font-medium px-6 py-2.5 rounded-full text-sm shadow-md transition-all hover:border hover:border-pink-secondary-text-color hover:bg-white hover:text-pink-secondary-text-color cursor-pink-button-color"
                     >
-                    Envoyer
+                    {t.form.send}
                     </button>
                 </div>
                 </form>
