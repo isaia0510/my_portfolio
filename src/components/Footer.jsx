@@ -37,9 +37,15 @@ export default function Footer() {
                  <div className="flex flex-col items-center md:items-end">
                     <span className="text-md text-primary-text-color mb-2">Let's connect</span>
                     <div className="flex space-x-3">
-                        <img src={GitHubIcon} className="w-8 h-8 flex items-center justify-center transition-all" />
-                        <img src={WhatsappIcon} className="w-8 h-8 flex items-center justify-center transition-all" />
-                        <img src={LinkedInIcon} className="w-8 h-8 flex items-center justify-center transition-all" />
+                        <a href="https://github.com/isaia0510" target="_blank" rel="noopener noreferrer" aria-label="Mon profil GitHub">
+                            <img src={GitHubIcon} className="w-8 h-8 flex items-center justify-center transition-all" />
+                        </a> 
+                        <a href="https://wa.me/261325886159" target="_blank" rel="noopener noreferrer" aria-label="Mon profil WhatsApp">
+                            <img src={WhatsappIcon} className="w-8 h-8 flex items-center justify-center transition-all" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/nirina-isaia-joëlle-57b411407?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn">
+                            <img src={LinkedInIcon} className="w-8 h-8 flex items-center justify-center transition-all" />
+                        </a>
                     </div>
                  </div>
             </div>
